@@ -7,14 +7,14 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-const int N = 1010;
+const int N = 10010;
 
-
+int n;
 
 int son[N][26],cnt[N],idx = 0;
 char str1[N];
 
-void Insrt(char str[]){
+void Insert(char str[]){
     int p = 0;
     for(int i =0;str[i];i++){
         int u = str[i] - 'a';
@@ -36,5 +36,18 @@ bool Query(char str[]){
 }
 
 int main(){
-    
+    cin >> n;
+    while(n--){
+        char op;
+        cin >> op >> str1;
+        switch(op){
+            case 'I':
+            Insert(str1);
+            break;
+            case 'Q':
+            cout << Query(str1) << endl;
+            break;
+        }
+    }
+
 }
